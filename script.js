@@ -18,9 +18,9 @@ inputBox.value = "";
 }
 listContainer.addEventListener("click", function(e){
 if(e.targer.tagName === "LI"){
-	e.targer.classList.toggle("checked");
+e.targer.classList.toggle("checked");
 }
 else if(e.target.tagName === "SPAN"){
 e.target.parentElement.remove();
 }
-{, false);
+}, false);
