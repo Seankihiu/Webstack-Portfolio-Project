@@ -15,12 +15,22 @@ span.innerHTML = "\u00d7";
 li.appendChild(span);
 }
 inputBox.value = "";
+saveData();
 }
 listContainer.addEventListener("click", function(e){
 if(e.targer.tagName === "LI"){
 e.targer.classList.toggle("checked");
+saveDate();
 }
 else if(e.target.tagName === "SPAN"){
 e.target.parentElement.remove();
+saveDate();
 }
 }, false);
+function saveDate(){
+localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask(){
+listContainer.innerHTML = localStorage.getItem("data");
+}
+showTask();
